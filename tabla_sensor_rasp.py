@@ -16,14 +16,14 @@ def hello():
 @app.route('/get_data.json')  # crea la ruta del servidor creado
 def get_data():
     response = {"data": []}
-    with open('data/data.csv') as fin:
+    with open('/home/pi/datos.csv') as fin:
         data = fin.readline()
 
         text_td = " "
         #print (data)
         for line in fin:
-            temp, pres, hum = line.rstrip('\n').split(",")
-            response['data'].append([temp, pres, hum])
+            temp, pres, hum,time = line.rstrip('\n').split(",")
+            response['data'].append([temp, pres, hum, time])
 
         jsonStr = json.dumps(response)
         return jsonStr

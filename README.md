@@ -26,6 +26,10 @@ Run
 --------------------------
 
 ``` bash
+# Activate contab
+crontab -e 
+ #Add on contab
+ */10 * * * * python /home/pi/tabla_html/bme280.py >> /home/pi/datos.csv
 # Activate virtualenv
 source .venv/bin/activate
 # Start the web server
